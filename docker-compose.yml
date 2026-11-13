@@ -1,0 +1,9 @@
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: centro-medico-vida
+    ports:
+      - "${WEB_PORT:-8080}:80"

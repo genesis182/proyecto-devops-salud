@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Médico Vida - Reserva de Horas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <h1>Centro Médico Vida</h1>
+        <p>Plataforma de reserva de horas médicas</p>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="bienvenida">
+            <h2>Reserva tu hora médica</h2>
+            <p>
+                Bienvenido a nuestro portal de atención.
+                Selecciona una especialidad, fecha y horario
+                para una reserva médica.
+            </p>
+        </section>
+
+        <section class="tarjeta">
+            <h2>Formulario de reserva</h2>
+
+            <form id="formulario-reserva">
+
+                <label for="nombre">Nombre del paciente:</label>
+                <input type="text" id="nombre"
+                       placeholder="Ingrese su nombre"
+                       required>
+
+                <label for="especialidad">Especialidad médica:</label>
+                <select id="especialidad" required>
+                    <option value="">Seleccione una especialidad</option>
+                    <option>Medicina General</option>
+                    <option>Pediatría</option>
+                    <option>Cardiología</option>
+                    <option>Dermatología</option>
+                </select>
+
+                <label for="fecha">Fecha de atención:</label>
+                <input type="date" id="fecha" required>
+
+                <label for="hora">Horario disponible:</label>
+                <select id="hora" required>
+                    <option value="">Seleccione un horario</option>
+                    <option>09:00</option>
+                    <option>10:00</option>
+                    <option>11:00</option>
+                    <option>15:00</option>
+                    <option>16:00</option>
+                </select>
+
+                <button type="submit">Reservar</button>
+
+            </form>
+
+            <p id="resultado" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="informacion">
+            <h2>Información de atención</h2>
+            <p><strong>Horario:</strong> Lunes a viernes,
+                08:00 a 18:00 horas.</p>
+            <p><strong>Modalidad:</strong> Atención presencial.</p>
+            <p><strong>Estado del servicio:</strong>
+                <span class="estado">Operativo</span>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Centro Médico Vida</p>
+        <p>IACC 2026</p>
+    </footer>
+
+    <script>
+        document.getElementById("formulario-reserva")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                document.getElementById("resultado").textContent =
+                    "Su reserva se ha realizado correctamente.";
+
+                this.reset();
+            });
+    </script>
+
+</body>
+</html>

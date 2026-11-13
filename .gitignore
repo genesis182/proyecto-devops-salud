@@ -1,0 +1,13 @@
+
+# Archivos de configuracion local
+.env
+.env.local
+
+# Configuracion del editor
+.vscode/
+
+# Archivos de registro
+*.log
+
+# Archivos temporales
+*.tmp
